@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+     {% block extrahead %} {% endblock %}  <!--ADD EXTRA CSS OR TO LINK ANY CSS JS -->
+    <title>{% block title %}182 - SHORTENS{% endblock title %}</title>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+          <li><a href="{% url 'home' %}" class="nav-link"><em>182-SHORTENER</em></a></li>
+          <li><a href="{% url 'shorted_urls' %}" class="nav-link">SHORTED URL's</a></li>
+        </ul>
+      </div>
+      {% block content %}{% endblock content %}
+</body>
+</html>

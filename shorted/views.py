@@ -8,6 +8,7 @@ from .forms import ShortnerForm
 from django.contrib.sites.shortcuts import get_current_site
 
 # Create your views here.
+
 def index(request):
     BASE_URL = get_current_site(request) #THIS IS OUR CURRENT SITE
     if request.method == 'POST':
@@ -16,13 +17,16 @@ def index(request):
             form.save()
             key = form.cleaned_data.get('key') #getting value from html field and assigning it to key. 
             messages.success(request, f"URL has been successfully shortened to {BASE_URL}/{key}")
-            return redirect('index')
+            return redirect('home')
 
     else:
         form = ShortnerForm()
 
     return render(request , 'index.html' ,{'form' : form})
 
+def shorted(request):
+    shorts = Shortner.objects.all() #pulling out data from database
+    return render(request , 'shorted.html' ,{'shorts':shorts})
 
 #this is the key view to redirect shortened url to original url.
 def redirector(request , key):

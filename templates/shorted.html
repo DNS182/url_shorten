@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'shorted.css' %}">
+{% endblock %}
+
+{% block title %}SHORTED-URL's{% endblock title %}
+
+{% block content %}
+
+        <table>
+            <caption>SHORTED URL's<h4 style ='color:red'>(AS ALREADY SHORTED URL DOESNT WORKS)</h4></caption>
+            <thead>
+              <tr>
+                <th scope="col" style ='color:black'>ORIGINAL- URL</th>
+                <th scope="col" style ='color:black'>SHORTEN-URL</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for short in shorts%}
+              <tr> 
+                <td data-label="ORIGINAL- URL"><a class="mr-2" target="_blank" href="{{short.origna_url}}">{{short.origna_url}}</a></td>
+                <td data-label="SHORTEN-URL"><a class="mr-2" target="_blank" href="{{request.get_host }}/{{ short.key }}"><strike>{{request.get_host }}/{{ short.key }}</strike></a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+  
+
+
+{% endblock content %}
