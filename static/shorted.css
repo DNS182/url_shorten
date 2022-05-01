@@ -22,8 +22,9 @@ table {
 
 table caption {
   color:black;
-  font-size: 1.7em;
+  font-size: 1.9em;
   margin: .5em 0 .75em;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 table tr {

@@ -13,7 +13,10 @@
 {% for message in messages%}
 <div class ='mesage'>
     {% if message %}
+    {% autoescape off %}
     <p>{{message}}</p>
+    {% endautoescape %}
+
     {% endif %}
     </div>
 {% endfor %}

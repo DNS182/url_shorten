@@ -16,7 +16,7 @@ def index(request):
         if form.is_valid():
             form.save()
             key = form.cleaned_data.get('key') #getting value from html field and assigning it to key. 
-            messages.success(request, f"URL has been successfully shortened to {BASE_URL}/{key}")
+            messages.success(request, f"URL has been successfully shortened to <a href ='/{key}' target='_blank'> {BASE_URL}/{key}</a>")
             return redirect('home')
 
     else:

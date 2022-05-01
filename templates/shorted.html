@@ -11,7 +11,7 @@
 {% block content %}
 
         <table>
-            <caption>SHORTED URL's<h4 style ='color:red'>(AS ALREADY SHORTED URL DOESNT WORKS)</h4></caption>
+            <caption>SHORTED URL's</caption>
             <thead>
               <tr>
                 <th scope="col" style ='color:black'>ORIGINAL- URL</th>
@@ -22,7 +22,7 @@
                 {% for short in shorts%}
               <tr> 
                 <td data-label="ORIGINAL- URL"><a class="mr-2" target="_blank" href="{{short.origna_url}}">{{short.origna_url}}</a></td>
-                <td data-label="SHORTEN-URL"><a class="mr-2" target="_blank" href="{{request.get_host }}/{{ short.key }}"><strike>{{request.get_host }}/{{ short.key }}</strike></a></td>
+                <td data-label="SHORTEN-URL"><a class="mr-2" target="_blank" href="/{{ short.key }}"><strike>{{request.get_host }}/{{ short.key }}</strike></a></td>
               </tr>
               {% endfor %}
             </tbody>
