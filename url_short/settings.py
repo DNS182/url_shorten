@@ -22,12 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+#os.environ['SECRET_KEY']
+
+SECRET_KEY = ('SECURITY_KEY_HERE')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://urlshortner-182.herokuapp.com/' , '127.0.0.1:8000']
+ALLOWED_HOSTS = [] 
+#Host Url Here On time of PRODUCTION
 
 
 # Application definition
@@ -81,11 +84,11 @@ WSGI_APPLICATION = 'url_short.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db7mlsn3qu0d8t',
-        'USER': os.environ['DB_USER'],
-        'PASSWORD': os.environ['DB_PASSWORD'],
-        'HOST': 'ec2-3-223-213-207.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': '#',
+        'USER': '#' ,
+        'PASSWORD': '#',
+        'HOST': '#',
+        'PORT': '#',
     }
 }
 
